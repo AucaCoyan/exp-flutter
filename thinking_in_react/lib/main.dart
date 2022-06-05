@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'checkbox.dart' as checkbox;
 
 void main() => {runApp(const MyApp())};
 
@@ -7,9 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: FilterableProductTable(),
-    );
+    return const MaterialApp(home: FilterableProductTable());
   }
 }
 
@@ -19,6 +18,7 @@ class FilterableProductTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: const [
         SearchBar(),
         ProductTable(),
@@ -32,7 +32,19 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return Material(
+        child: Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: Column(children: [
+        const TextField(decoration: InputDecoration(labelText: 'Search')),
+        Row(
+          children: const [
+            checkbox.CheckboxWidget(),
+            Text('Only show products in stock'),
+          ],
+        )
+      ]),
+    ));
   }
 }
 
@@ -54,9 +66,11 @@ class ProductCategoryRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [ProductRow(), Text('data')],
-    );
+    return Container(
+        decoration: const BoxDecoration(color: Colors.amber),
+        child: Column(
+          children: const [ProductRow()],
+        ));
   }
 }
 
@@ -65,10 +79,20 @@ class ProductRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: const [Text('Football'), Text('\$99')],
-      ),
-    );
+    return Container(
+        decoration: const BoxDecoration(color: Colors.cyan),
+        child: SizedBox(
+          width: 300,
+          height: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Text('Football'),
+              Text('99'),
+              Text('Baseball'),
+              Text('89')
+            ],
+          ),
+        ));
   }
 }
