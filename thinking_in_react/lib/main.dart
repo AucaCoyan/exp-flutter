@@ -54,13 +54,22 @@ class ProductTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: const [
+        HeaderRow(),
         Text('Name'),
         Text('Price'),
         ProductCategoryRow(),
       ],
     );
+  }
+}
+
+class HeaderRow extends StatelessWidget {
+  const HeaderRow({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [Text('Name'), Text('Price')]);
   }
 }
 
