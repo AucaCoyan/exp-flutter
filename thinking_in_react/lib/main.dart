@@ -8,7 +8,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: FilterableProductTable());
+    return const MaterialApp(
+      home: FilterableProductTable(),
+    );
   }
 }
 
@@ -17,12 +19,16 @@ class FilterableProductTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: const [
-        SearchBar(),
-        ProductTable(),
-      ],
+    return Container(
+      // app background color
+      decoration: const BoxDecoration(color: Colors.white),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: const [
+          SearchBar(),
+          ProductTable(),
+        ],
+      ),
     );
   }
 }
@@ -56,9 +62,11 @@ class ProductTable extends StatelessWidget {
     return Column(
       children: const [
         HeaderRow(),
-        Text('Name'),
-        Text('Price'),
-        ProductCategoryRow(),
+        Product1(),
+        Product1(),
+        Product1(),
+        Product1(),
+        Product1(),
       ],
     );
   }
@@ -69,42 +77,53 @@ class HeaderRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [Text('Name'), Text('Price')]);
-  }
-}
-
-class ProductCategoryRow extends StatelessWidget {
-  const ProductCategoryRow({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        decoration: const BoxDecoration(color: Colors.amber),
-        child: Column(
-          children: const [ProductRow()],
-        ));
-  }
-}
-
-class ProductRow extends StatelessWidget {
-  const ProductRow({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        decoration: const BoxDecoration(color: Colors.cyan),
-        child: SizedBox(
-          width: 300,
-          height: 300,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Text('Football'),
-              Text('99'),
-              Text('Baseball'),
-              Text('89')
-            ],
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: const [
+          Text(
+            'Name',
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.clip,
+            style: TextStyle(
+              color: Colors.black,
+              decoration: TextDecoration.none,
+            ),
           ),
-        ));
+          Text(
+            'Price',
+            style: TextStyle(
+              color: Colors.black,
+              decoration: TextDecoration.none,
+            ),
+          )
+        ]);
+  }
+}
+
+class Product1 extends StatelessWidget {
+  const Product1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: const [
+          Text(
+            'Basketball',
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.clip,
+            style: TextStyle(
+              color: Colors.black,
+              decoration: TextDecoration.none,
+            ),
+          ),
+          Text(
+            '\$99.99',
+            style: TextStyle(
+              color: Colors.black,
+              decoration: TextDecoration.none,
+            ),
+          )
+        ]);
   }
 }
