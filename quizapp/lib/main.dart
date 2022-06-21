@@ -33,7 +33,8 @@ class _AppState extends State<App> {
       builder: (context, snapshot) {
         // Check for errors
         if (snapshot.hasError) {
-          return Text('error', textDirection: TextDirection.ltr);
+          final error = snapshot.error;
+          return Text(error.toString(), textDirection: TextDirection.ltr);
         }
 
         // Once complete, show your application
