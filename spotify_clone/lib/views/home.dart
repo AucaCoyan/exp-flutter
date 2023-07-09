@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/views/album_view.dart';
 import 'package:spotify_clone/widgets/album_card.dart';
 import 'package:spotify_clone/widgets/song_card.dart';
 
@@ -15,19 +16,21 @@ class _HomeViewState extends State<HomeView> {
       Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * .5,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-              Colors.white.withOpacity(0.5),
-              Colors.white.withOpacity(0.1),
-              Colors.black.withOpacity(0)
-            ])),
+        decoration: BoxDecoration(color: Color(0xFf1C7A74)),
       ),
       SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    Colors.black.withOpacity(0.0),
+                    Colors.black.withOpacity(0.9),
+                    Colors.black.withOpacity(1.0),
+                    Colors.black.withOpacity(1.0),
+                  ])),
               constraints: BoxConstraints(),
               child: SafeArea(
                 child: Column(
@@ -61,28 +64,57 @@ class _HomeViewState extends State<HomeView> {
                           child: Row(
                             children: [
                               AlbumCard(
-                                image: AssetImage("1.webp"),
-                                label: "Mot6vation Mix",
-                              ),
+                                  image: AssetImage("1.webp"),
+                                  label: "Mot6vation Mix",
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => AlbumView()));
+                                  }),
                               SizedBox(width: 16),
                               AlbumCard(
                                 image: AssetImage("3.jpg"),
                                 label: "Dark Side of the Moon",
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => AlbumView()));
+                                },
                               ),
                               SizedBox(width: 16),
                               AlbumCard(
                                 image: AssetImage("region_global_default.jpg"),
                                 label: "Top 50-Global",
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => AlbumView()));
+                                },
                               ),
                               SizedBox(width: 16),
                               AlbumCard(
                                 image: AssetImage("8.webp"),
                                 label: "Power Gaming",
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => AlbumView()));
+                                },
                               ),
                               SizedBox(width: 16),
                               AlbumCard(
                                 image: AssetImage("43.jpg"),
                                 label: "Best mode",
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => AlbumView()));
+                                },
                               ),
                             ],
                           )),
