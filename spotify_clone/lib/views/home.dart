@@ -74,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
                                   }),
                               SizedBox(width: 16),
                               AlbumCard(
-                                image: AssetImage("3.jpg"),
+                                image: AssetImage("album3.jpg"),
                                 label: "Dark Side of the Moon",
                                 onTap: () {
                                   Navigator.push(
@@ -107,7 +107,7 @@ class _HomeViewState extends State<HomeView> {
                               ),
                               SizedBox(width: 16),
                               AlbumCard(
-                                image: AssetImage("43.jpg"),
+                                image: AssetImage("4album3.jpg"),
                                 label: "Best mode",
                                 onTap: () {
                                   Navigator.push(
@@ -146,12 +146,12 @@ class _HomeViewState extends State<HomeView> {
                               children: [
                                 RowAlbumCard(
                                   label: "Top 50 - Global",
-                                  image: AssetImage("3.jpg"),
+                                  image: AssetImage("album3.jpg"),
                                 ),
                                 SizedBox(width: 16),
                                 RowAlbumCard(
                                   label: "Album 1",
-                                  image: AssetImage("43.jpg"),
+                                  image: AssetImage("4album3.jpg"),
                                 ),
                               ],
                             ),
@@ -190,7 +190,7 @@ class _HomeViewState extends State<HomeView> {
                             padding: EdgeInsets.symmetric(horizontal: 20),
                             child: Row(children: [
                               SongCard(
-                                image: AssetImage("3.jpg"),
+                                image: AssetImage("album3.jpg"),
                               ),
                               SizedBox(width: 16),
                               SongCard(
@@ -237,7 +237,7 @@ class _HomeViewState extends State<HomeView> {
                               ),
                               SizedBox(width: 16),
                               SongCard(
-                                image: AssetImage("3.jpg"),
+                                image: AssetImage("album3.jpg"),
                               ),
                               SizedBox(width: 16),
                               SongCard(
@@ -249,7 +249,7 @@ class _HomeViewState extends State<HomeView> {
                               ),
                               SizedBox(width: 16),
                               SongCard(
-                                image: AssetImage("43.jpg"),
+                                image: AssetImage("4album3.jpg"),
                               ),
                               SizedBox(width: 16),
                               SongCard(

@@ -37,14 +37,24 @@ class _AlbumViewState extends State<AlbumView> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image(
-                          image: AssetImage("3.jpg"),
-                          width: 300,
-                          height: 300,
-                          // width: MediaQuery.of(context).size.width - 100,
-                          // height: MediaQuery.of(context).size.height - 100,
-                          fit: BoxFit.cover,
+                        Container(
+                          decoration: BoxDecoration(boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(.5),
+                                offset: Offset(0, 20),
+                                blurRadius: 32,
+                                spreadRadius: 16)
+                          ]),
+                          child: Image(
+                            image: AssetImage("album3.jpg"),
+                            width: 300,
+                            height: 300,
+                            // width: MediaQuery.of(context).size.width - 100,
+                            // height: MediaQuery.of(context).size.height - 100,
+                            fit: BoxFit.cover,
+                          ),
                         ),
+                        SizedBox(height: 16),
                         Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
